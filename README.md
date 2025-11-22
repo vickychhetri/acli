@@ -5,3 +5,7 @@ acli is a lightweight CLI tool for recording your daily work logs.
 			Use acli to add tasks, list tasks for a specific date, and maintain a clean
 			timeline of your work activities. Ideal for developers, professionals, or anyone
 			who wants a fast and minimal personal logging system.
+
+Location: $HOME/.local/share/acli/logs/
+
+Install: sudo dpkg -i acli_1.0.0_amd64.deb

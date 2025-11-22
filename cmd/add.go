@@ -4,6 +4,7 @@ Copyright © 2025 Vicky Chhetri <vickychhetri4@gmail.com>
 package cmd
 
 import (
+	"acli/util"
 	"encoding/csv"
 	"fmt"
 	"os"
@@ -36,10 +37,9 @@ var addCmd = &cobra.Command{
 				return fmt.Errorf("invalid date, use YYYY-MM-DD")
 			}
 		}
-		folder := "logs"
-		os.MkdirAll(folder, 0755)
-		filename := filepath.Join(folder, logDate.Format("2006-01-02")+".csv")
-		filenameMaster := filepath.Join(folder, "Master_Log_Sheet.csv")
+		dataDir, _ := util.GetDataDir()
+		filename := filepath.Join(dataDir, logDate.Format("2006-01-02")+".csv")
+		filenameMaster := filepath.Join(dataDir, "Master_Log_Sheet.csv")
 
 		file, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 		if err != nil {

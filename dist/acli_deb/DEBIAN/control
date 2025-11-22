@@ -1,0 +1,8 @@
+Package: acli
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Vicky Chhetri <vickychhetri4@gmail.com>
+Description: acli - Advanced daily log CLI tool
+ A CLI tool to manage daily logs, priorities, categories, weekly summary and more.

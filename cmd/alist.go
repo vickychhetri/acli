@@ -4,6 +4,7 @@ Copyright © 2025 Vicky Chhetri <vickychhetri4@gmail.com>
 package cmd
 
 import (
+	"acli/util"
 	"encoding/csv"
 	"fmt"
 	"os"
@@ -18,7 +19,8 @@ var alistCmd = &cobra.Command{
 	Short: "Master List of all the recorded logs ",
 	Long:  `Master List of all the recorded logs`,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		filename := filepath.Join("logs", "Master_Log_Sheet.csv")
+		dataDir, _ := util.GetDataDir()
+		filename := filepath.Join(dataDir, "Master_Log_Sheet.csv")
 		file, err := os.Open(filename)
 		if err != nil {
 			return fmt.Errorf("no logs")

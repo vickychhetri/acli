@@ -4,6 +4,7 @@ Copyright © 2025 Vicky Chhetri <vickychhetri4@gmail.com>
 package cmd
 
 import (
+	"acli/util"
 	"encoding/csv"
 	"fmt"
 	"os"
@@ -22,7 +23,8 @@ var weeklyCmd = &cobra.Command{
 		fmt.Println("--------------------------------")
 		for i := 0; i < 7; i++ {
 			day := time.Now().AddDate(0, 0, -i)
-			filename := filepath.Join("logs", day.Format("2006-01-02")+".csv")
+			dataDir, _ := util.GetDataDir()
+			filename := filepath.Join(dataDir, day.Format("2006-01-02")+".csv")
 
 			file, err := os.Open(filename)
 			if err != nil {
