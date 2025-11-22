@@ -4,6 +4,7 @@ Copyright © 2025 Vicky Chhetri <vickychhetri4@gmail.com>
 package cmd
 
 import (
+	"acli/util"
 	"encoding/csv"
 	"fmt"
 	"os"
@@ -32,8 +33,8 @@ var listCmd = &cobra.Command{
 				return fmt.Errorf("invalid date, use YYYY-MM-DD")
 			}
 		}
-
-		filename := filepath.Join("logs", logDate.Format("2006-01-02")+".csv")
+		dataDir, _ := util.GetDataDir()
+		filename := filepath.Join(dataDir, logDate.Format("2006-01-02")+".csv")
 		file, err := os.Open(filename)
 		if err != nil {
 			return fmt.Errorf("no logs for date: %s", logDate.Format("2006-01-02"))
