@@ -9,3 +9,24 @@ acli is a lightweight CLI tool for recording your daily work logs.
 Location: $HOME/.local/share/acli/logs/
 
 Install: sudo dpkg -i acli_1.0.0_amd64.deb
+
+
+Use
+
+**Add**
+acli add "Fixed login bug" --priority high --category backend
+
+--priority low|medium|high
+--category string
+--date YYYY-MM-DD
+
+acli add "Client meeting" --priority medium --category meeting --date 2025-01-10
+
+**LIST**
+acli list
+
+List logs for a specific date:
+acli list --date 2025-01-10
+
+**Weekly**
+acli weekly
