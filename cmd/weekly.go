@@ -36,7 +36,7 @@ var weeklyCmd = &cobra.Command{
 
 			file, err := os.Open(filepath)
 			if err != nil {
-				continue // no file for this day
+				continue
 			}
 
 			reader := csv.NewReader(file)
