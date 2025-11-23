@@ -50,7 +50,7 @@ var weeklyCmd = &cobra.Command{
 			anyData = true
 
 			// Colored output
-			dateColor := color.New(color.FgCyan, color.Bold).Sprintf(dateStr)
+			dateColor := color.New(color.FgCyan, color.Bold).Sprintf("%s", dateStr)
 			countColor := color.New(color.FgYellow, color.Bold).Sprintf("%d", len(rows))
 
 			fmt.Printf("%s  -  %s tasks\n", dateColor, countColor)
